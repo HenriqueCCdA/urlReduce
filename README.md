@@ -1,5 +1,7 @@
 # urlRedure
 
+[![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/)
+
 Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
 ## Passos desensolvidos 
@@ -49,3 +51,14 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```
 
 7. Configurando o **CI**.  
+
+8. Configurando o **PyUp**
+
+    ```
+    schedule: ''
+    update: false
+
+    requirements:
+     - Pipfile
+     - Pipfile.lock
+    ```

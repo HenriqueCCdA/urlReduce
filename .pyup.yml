@@ -3,4 +3,4 @@ update: false
 
 requirements:
   - Pipfile
-  - Pipfile.lockk
+  - Pipfile.lock
