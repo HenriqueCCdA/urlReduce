@@ -5,25 +5,25 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 ## Passos desensolvidos 
 
 ### configuração do projeto
-    1. criar o ambiente virtual:
+1. criar o ambiente virtual:
        
     ```
     pipenv install
     ```
 
-    2. Instalando django:
+2. Instalando django:
 
     ```
     pipenv install django
     ```
 
-    3. Instalando flake8 como dependencia de desenvolimento:
+3. Instalando flake8 como dependencia de desenvolimento:
 
     ```
     pipenv install -d flake8
     ```
 
-    4. Configurando o flake8 através do arquivo .flake8
+4. Configurando o flake8 através do arquivo .flake8
 
     ```
     [flake8]
@@ -33,9 +33,9 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
     Esta são apenas as configurações inicias com o tempo elas podem mudar
 
-    5. Criando o arquivo .gitignore
+5. Criando o arquivo .gitignore
 
-    6. Inicializando o projeto **Django**
+6. Inicializando o projeto **Django**
 
     ```
     pipenv shell
@@ -47,3 +47,5 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```
     python manage.py runserver
     ```
+
+7. Configurando o **CI**.  
