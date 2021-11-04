@@ -50,9 +50,47 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     python manage.py runserver
     ```
 
-7. Configurando o **CI**.  
+7. Criar a aplicação **base**
 
-8. Configurando o **PyUp**
+    ```
+    cd devpro
+    python ..\manage.py startapp base 
+    ```
+
+    Para testar pode-se rodar o servidor através de:
+
+    ```
+    python manage.py runserver
+    ```
+
+8. Instalando o pytest-django
+
+    ```
+    pipenv install -d 'pytest-django'
+    ```
+
+    criar o arquivo pytest.in
+
+    ```
+    [pytest]
+    DJANGO_SETTINGS_MODULE = devpro.settings
+    ```
+
+    Rodando os testes.
+
+    ```
+    python -m pytest
+    ```
+
+10. Instalando a cobertura de testes com **codecov**
+ 
+    ``` 
+    pipenv install -d 'pytest-cov' codecov
+    ```
+
+11. Configurando o **CI**.  
+
+12. Configurando o **PyUp**
 
     ```
     schedule: ''

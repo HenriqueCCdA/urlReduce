@@ -2,3 +2,9 @@
 .venv
 # banco de dados
 db.sqlite3
+# codebyte do python
+*__pycache__*
+# pytest
+*.pytest_cache*
+# codecov
+.coverage
