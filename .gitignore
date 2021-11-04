@@ -1,0 +1,4 @@
+# ambiente virtuaç
+.venv
+# banco de dados
+db.sqlite3
