@@ -27,6 +27,8 @@ SECRET_KEY = config('SECRET_KEY', cast=str)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
+AUTH_USER_MODEL = 'encurtador.User'
+
 ALLOWED_HOSTS = ['*']
 
 
