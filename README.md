@@ -1,13 +1,13 @@
-# urlRedure
+# 🐍 urlRedure 🐍
 
 [![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/)
 [![codecov](https://codecov.io/gh/HenriqueCCdA/urlRedure/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlRedure)
 
-Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
+Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br. 
 
-## Passos desensolvidos 
+## Passos desensolvidos durante o projeto
 
-### configuração do projeto
+### 1) Configuração do projeto 🛠
 * criar o ambiente virtual:
        
     ```console
