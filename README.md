@@ -96,8 +96,6 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     pipenv install -d 'pytest-cov' codecov
     ```
 
-
-
 * Configurando o **CI**.  
        Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
 
@@ -112,3 +110,13 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
      - Pipfile
      - Pipfile.lock
     ```
+
+### 2) Uniciando o o projeto 🛠
+
+* Criando o app encutador:
+
+    ´´´console
+    cd devpro
+    python ../manage.py startapp encurtador
+    ´´´
+ 
