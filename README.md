@@ -7,25 +7,25 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 ## Passos desensolvidos 
 
 ### configuração do projeto
-1. criar o ambiente virtual:
+* criar o ambiente virtual:
        
     ```
     pipenv install
     ```
 
-2. Instalando django:
+* Instalando django:
 
     ```
     pipenv install django
     ```
 
-3. Instalando flake8 como dependencia de desenvolimento:
+* Instalando flake8 como dependencia de desenvolimento:
 
     ```
     pipenv install -d flake8
     ```
 
-4. Configurando o flake8 através do arquivo .flake8
+* Configurando o flake8 através do arquivo .flake8
 
     ```
     [flake8]
@@ -35,9 +35,9 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
     Esta são apenas as configurações inicias com o tempo elas podem mudar
 
-5. Criando o arquivo .gitignore
+* Criando o arquivo .gitignore
 
-6. Inicializando o projeto **Django**
+* Inicializando o projeto **Django**
 
     ```
     pipenv shell
@@ -50,7 +50,9 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     python manage.py runserver
     ```
 
-7. Criar a aplicação **base**
+* Instalando a lib python-decouple 
+
+* Criar a aplicação **base**
 
     ```
     cd devpro
@@ -63,7 +65,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     python manage.py runserver
     ```
 
-8. Instalando o pytest-django
+* Instalando o pytest-django
 
     ```
     pipenv install -d 'pytest-django'
@@ -82,15 +84,17 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     python -m pytest
     ```
 
-10. Instalando a cobertura de testes com **codecov**
+* Instalando a cobertura de testes com **codecov**
  
     ``` 
     pipenv install -d 'pytest-cov' codecov
     ```
 
-11. Configurando o **CI**.  
 
-12. Configurando o **PyUp**
+
+* Configurando o **CI**.  
+
+* Configurando o **PyUp**
 
     ```
     schedule: ''
