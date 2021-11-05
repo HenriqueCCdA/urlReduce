@@ -84,7 +84,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     DJANGO_SETTINGS_MODULE = devpro.settings
     ```
 
-    Rodando os testes.
+   Rodando os testes.
 
     ```console
     python -m pytest
@@ -97,7 +97,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```
 
 * Configurando o **CI**.  
-       Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
+    > Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
 
 
 * Configurando o **PyUp**
@@ -115,8 +115,31 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
 * Criando o app encutador:
 
-    ´´´console
+    ```console
     cd devpro
-    python ../manage.py startapp encurtador
-    ´´´
- 
+    python ../manage.py startapp encurtador    
+    ```
+
+ * Criando o usuario costumizado:
+
+    Primeiro:
+      
+    > O usuário costumizado irá ficar no aquivos models.py do app encutador. O código base foi retirado da classe AbstracticUser encontrado no módulo django.contib.auth.models.py.
+
+    > Criar UserManager usando novamente a Classe UserManager do módulo django.contib.auth.models.py.
+
+
+    Criar a varialvel no settings.py 
+   
+    ```python
+    AUTH_USER_MODEL='devpro.encutador'   
+    ```
+
+    Para testa posse usar o makemigrations 
+    
+    ```console
+    python manage.py makemigrations
+    ```
+
+
+
