@@ -2,7 +2,7 @@ from http import HTTPStatus
 
 from django.test import Client
 
-from devpro.django_assertions import assert_contains
+# from devpro.django_assertions import assert_contains
 
 
 def test_status_code(client: Client):
@@ -15,15 +15,24 @@ def test_status_code(client: Client):
 
 def test_status_code_with_slug(client: Client):
     '''
-    Testa se caminho com slug foi encontrado
+    Testa se aplicao foi redirecionado
     '''
     response = client.get('/google')
-    assert response.status_code == HTTPStatus.OK
+    assert response.status_code == HTTPStatus.FOUND  # 302
 
 
-def test_if_slug_is_corret_in_view(client: Client):
+def test_slug_not_found(client: Client):
     '''
-    Testa se slug esta no corpo da pagina
+    Testa se a aplicação foir rederecionada para '/' quando
+    são existe o slug
     '''
-    response = client.get('/google')
-    assert_contains(response, 'google')
+    response = client.get('/banana')
+    assert response.status_code == HTTPStatus.FOUND  # 302
+    assert response.headers['Location'] == '/'
+
+# def test_if_slug_is_corret_in_view(client: Client):
+#     '''
+#     Testa se slug esta no corpo da pagina
+#     '''
+#     response = client.get('/google')
+#     assert_contains(response, 'google')
