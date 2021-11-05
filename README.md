@@ -141,5 +141,6 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     python manage.py makemigrations
     ```
 
+* Redirecionando usando o slug
 
 
