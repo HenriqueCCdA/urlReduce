@@ -1,5 +1,6 @@
-from django.test import Client
 from http import HTTPStatus
+
+from django.test import Client
 
 
 def test_status_code(client: Client):
