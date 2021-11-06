@@ -1,20 +1,26 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect
+from django.core.exceptions import ObjectDoesNotExist
+
+
+from devpro.encurtador.models import UrlRedirect
 
 # Create your views here.
 
-links = {'google': 'https://www.google.com'}
+# links = {'google': 'https://www.google.com'}
 
 
 def home(resquest):
     return HttpResponse('Olá, eu sou o encurador')
 
 
-def redirecionar(resquet, slug):
-    path = links.get(slug, False)
+def redirecionar(resquet, slug: str):
+
+    try:
+        obj = UrlRedirect.objects.get(slug=slug)
     # se nao achar o slug redireciona para a home
-    if not path:
+    except ObjectDoesNotExist:
         return redirect('/')
-    # se achar vai para o link desejado
     else:
+        path = obj.destino
         return redirect(path)

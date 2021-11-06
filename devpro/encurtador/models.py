@@ -92,3 +92,19 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+
+class UrlRedirect(models.Model):
+    """
+    Classe que armazena as urls.
+
+    Campos
+    destino : guarda a url real
+    slug: o apelido da url
+    criado_em : momento que a url foi criada
+    atualizado_em : momento que a url foi modifica
+    """
+    destino = models.URLField(max_length=1024)
+    slug = models.SlugField(max_length=128, unique=True)
+    criado_em = models.DateTimeField(auto_now_add=True)
+    atualizado_em = models.DateTimeField(auto_now=True)

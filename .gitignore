@@ -10,3 +10,5 @@ db.sqlite3
 .coverage
 # arquivos de variaveis de ambiente
 .env
+# IDE
+.vscode
