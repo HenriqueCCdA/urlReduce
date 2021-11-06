@@ -20,6 +20,12 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     pipenv install django
     ```
 
+* Instalando o baker
+    
+    ```console 
+    pipenv install -d model-bakery
+    ``` 
+
 * Instalando flake8 como dependencia de desenvolimento:
 
     ```console
@@ -143,4 +149,9 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
 * Redirecionando usando o slug
 
+    ```python
+    return redirect(path)  
+    ```
+
+* Criando modelo para armazenar as Urls.
 
