@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -10,11 +10,21 @@ from devpro.encurtador.models import UrlRedirect
 # links = {'google': 'https://www.google.com'}
 
 
-def home(resquest):
+def home(request):
     return HttpResponse('Olá, eu sou o encurador')
 
 
-def redirecionar(resquet, slug: str):
+def relatorios(request, slug: str):
+    reduce = UrlRedirect.objects.get(slug=slug)
+    print(reduce.slug)
+    url_reduzida = request.build_absolute_uri(f'/reduzido/{reduce.slug}')
+    contexto = {'reduce':  reduce,
+                'url_reduzida': url_reduzida}
+
+    return render(request, 'encutador/relatorio.html', context=contexto)
+
+
+def redirecionar(request, slug: str):
 
     try:
         obj = UrlRedirect.objects.get(slug=slug)
