@@ -21,5 +21,5 @@ from devpro.encurtador import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home_html'),
-    path('<slug:slug>', views.redirecionar, name='redirecionar_html')
+    path('destino/<slug:slug>', views.redirecionar, name='redirecionar_html')
 ]
