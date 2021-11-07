@@ -117,7 +117,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
      - Pipfile.lock
     ```
 
-### 2) Uniciando o o projeto 🛠
+### 2) Iniciando o o projeto 🛠
 
 * Criando o app encutador:
 
@@ -127,9 +127,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```
 
  * Criando o usuario costumizado:
-
-    Primeiro:
-      
+       
     > O usuário costumizado irá ficar no aquivos models.py do app encutador. O código base foi retirado da classe AbstracticUser encontrado no módulo django.contib.auth.models.py.
 
     > Criar UserManager usando novamente a Classe UserManager do módulo django.contib.auth.models.py.
