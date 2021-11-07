@@ -32,20 +32,20 @@ def test_status_code(client: Client):
 
 def test_redirect_with_slug_found(client: Client, new_url):
     '''
-    Testa se aplicao foi redirecionado
+    Testa se aplicao foi redireciona para o site desejado
     '''
     url_model = new_url
-    response = client.get('/' + url_model.slug)
+    response = client.get('/destino/' + url_model.slug)
     assert response.status_code == HTTPStatus.FOUND  # 302
     assert response.headers['Location'] == url_model.destino
 
 
 def test_slug_not_found(client: Client, new_url):
     '''
-    Testa se a aplicação foir rederecionada para '/' quando
+    Testa se a aplicação foi rederecionada para '/' quando
     são existe o slug
     '''
-    response = client.get('/banana')
+    response = client.get('/destino/banana')
     assert response.status_code == HTTPStatus.FOUND  # 302
     assert response.headers['Location'] == '/'
 
