@@ -153,7 +153,11 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
 * Criando modelo para armazenar as Urls.
     
-    > Adicionar CRUD do adimn do django.
+    > Adicionar CRUD do admin do django.
 
-* Criando a pagina dos relatórios. 
+* Criando a página dos relatórios. 
+
+* Criando modelo para armazenar as UrlLog.
+
+
 

@@ -16,7 +16,6 @@ def home(request):
 
 def relatorios(request, slug: str):
     reduce = UrlRedirect.objects.get(slug=slug)
-    print(reduce.slug)
     url_reduzida = request.build_absolute_uri(f'/reduzido/{reduce.slug}')
     contexto = {'reduce':  reduce,
                 'url_reduzida': url_reduzida}
