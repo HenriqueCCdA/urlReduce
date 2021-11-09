@@ -101,6 +101,18 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```console 
     pipenv install -d 'pytest-cov' codecov
     ```
+* Instalando o ipython e django-extensions
+
+    ```console 
+    pipenv install ipython django-extensions 
+    ```
+
+    ```python
+    INSTALLED_APPS = [
+    ... 
+    'django_extensions'    
+    ]
+    ```
 
 * Configurando o **CI**.  
     > Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
