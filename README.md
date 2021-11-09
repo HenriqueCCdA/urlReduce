@@ -159,5 +159,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
 * Criando modelo para armazenar as UrlLog.
 
+* Mostrando o relatorio
+
 
 

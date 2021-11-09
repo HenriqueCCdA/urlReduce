@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 
 
-from devpro.encurtador.models import UrlRedirect
+from devpro.encurtador.models import UrlLog, UrlRedirect
 
 # Create your views here.
 
@@ -26,10 +26,18 @@ def relatorios(request, slug: str):
 def redirecionar(request, slug: str):
 
     try:
-        obj = UrlRedirect.objects.get(slug=slug)
+        url = UrlRedirect.objects.get(slug=slug)
     # se nao achar o slug redireciona para a home
     except ObjectDoesNotExist:
         return redirect('/')
     else:
-        path = obj.destino
+        path = url.destino
+
+        UrlLog.objects.create(
+            origem=request.META.get('HTTP_REFERER'),
+            user_agent=request.META.get('HTTP_USER_AGENT'),
+            host=request.META.get('HTTP_HOST'),
+            ip=request.META.get('REMOTE_ADDR'),
+            url_redirect=url,
+        )
         return redirect(path)
