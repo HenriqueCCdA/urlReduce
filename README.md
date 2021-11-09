@@ -114,6 +114,13 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ]
     ```
 
+* Configurando a coleta dos arquivos estáticos:
+
+    ```python
+    STATIC_ROOT = BASE_DIR / 'staticfiles/'
+    ```
+
+
 * Configurando o **CI**.  
     > Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
 
