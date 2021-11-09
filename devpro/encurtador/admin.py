@@ -10,4 +10,13 @@ class UrlRedirectAdmin(admin.ModelAdmin):
 
 @admin.register(UrlLog)
 class UrlLog(admin.ModelAdmin):
-    list_display = ('criado_em', 'criado_em', 'user_agent', 'host', 'ip', 'url_redirect')
+    list_display = ('origem', 'criado_em', 'user_agent', 'host', 'ip', 'url_redirect')
+
+    def has_add_permission(self, request, obj=None) -> bool:
+        return False
+
+    def has_delete_permission(self, request, obj=None) -> bool:
+        return False
+
+    def has_change_permission(self, request, obj=None) -> bool:
+        return False
