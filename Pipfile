@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 python-decouple = "*"
+ipython = "*"
+django-extensions = "*"
 
 [dev-packages]
 flake8 = "*"
