@@ -23,3 +23,34 @@ def separa_e_conta_os_redirecionamentos_por_data(slug: str) -> List[UrlRedirect]
     ).order_by('data')
 
     return list(q)
+
+
+def soma_de_cliques(redirecionamentos_por_data: List[UrlRedirect]) -> float:
+    '''
+    ---------------------------------------------------------------------------------
+    Fachada que calcula o numero total de cliques em uma url
+    ---------------------------------------------------------------------------------
+    param: redirecionamentos_por_data
+    ---------------------------------------------------------------------------------
+    return: Numero total de cliques
+    ---------------------------------------------------------------------------------
+    OBS: redirecionamentos_por_data tem que ter os campos data e cliques
+    ---------------------------------------------------------------------------------
+    '''
+    return sum(c.cliques for c in redirecionamentos_por_data)
+
+
+def soma_de_cliques_pela_slug(slug: str) -> float:
+    '''
+    ---------------------------------------------------------------------------------
+    Fachada que calcula o numero total de cliques em uma url
+    ---------------------------------------------------------------------------------
+    param: redirecionamentos_por_data
+    ---------------------------------------------------------------------------------
+    return: Numero total de cliques
+    ---------------------------------------------------------------------------------
+    OBS: redirecionamentos_por_data tem que ter os campos data e cliques
+    ---------------------------------------------------------------------------------
+    '''
+
+    return len(list(UrlRedirect.objects.get(slug=slug).logs.all()))
