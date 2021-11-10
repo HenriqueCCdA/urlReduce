@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 from devpro.encurtador.models import UrlLog, UrlRedirect
 
-from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data
+from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data, soma_de_cliques
 
 
 def home(request):
@@ -18,7 +18,8 @@ def relatorios(request, slug: str):
 
     contexto = {'reduce':  reduce,
                 'url_reduzida': url_reduzida,
-                'redirecionamentos_por_data': redirecionamentos_por_data
+                'redirecionamentos_por_data': redirecionamentos_por_data,
+                'total_cliques': soma_de_cliques(redirecionamentos_por_data)
                 }
 
     return render(request, 'encutador/relatorio.html', context=contexto)
