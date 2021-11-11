@@ -3,7 +3,13 @@
 [![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/)
 [![codecov](https://codecov.io/gh/HenriqueCCdA/urlRedure/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlRedure)
 
-Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br. 
+Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
+
+Deploy da aplica no **Heroku**: 
+
+🔥🔥🔥[https://urlreduce.herokuapp.com/](https://urlreduce.herokuapp.com/)🔥🔥🔥
+
+---
 
 ## Passos desensolvidos durante o projeto
 
@@ -136,7 +142,7 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
      - Pipfile.lock
     ```
 
-### 2) Deploy no heroku
+### 2) Deploy no heroku 🛠
 
 * Instalar o arquivo gunicorn:
 
@@ -155,6 +161,22 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
     ```console
     heroku apps:create urlreduce
     ```
+
+* Configurando as variaveis no heroku:
+
+    ```console
+    heroku config:set DEBUG=False
+    heroku config:set SECRET_KEY="chave secreta de verdade"
+    ```
+
+* Testando do deploy no heroku:
+
+   ```console
+   git push heroku  branch_local:master
+   ```
+
+* Configuração para o Deploy automatico é feita no site.
+
 
 
 ### 3) Iniciando o o projeto 🛠
