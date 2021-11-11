@@ -68,13 +68,14 @@ Deploy da aplica no **Heroku**:
    ```yml
    DEBUG=FALSE
    SECRET_KEY=Defina sua chave secreta aqui
+   ALLOWED_HOSTS=
    ```
 
 * Criar a aplicação **base**
 
     ```console
     cd devpro
-    python ..\manage.py startapp base 
+    python ..\manage.py startapp base
     ```
 
     Para testar pode-se rodar o servidor através de:
@@ -127,7 +128,7 @@ Deploy da aplica no **Heroku**:
     ```
 
 
-* Configurando o **CI**.  
+* Configurando o **CI**.
     > Link para o GitHub Actions [file](https://github.com/HenriqueCCdA/urlRedure/tree/main/.github/workflows)
 
 
@@ -162,12 +163,21 @@ Deploy da aplica no **Heroku**:
     heroku apps:create urlreduce
     ```
 
+* Chave gerando a chave secreta para heroku:
+
+    ```console
+    >>>from django.core.management.utils import get_random_secret_key
+    >>>get_random_secret_key()
+    ```
+
 * Configurando as variaveis no heroku:
 
     ```console
     heroku config:set DEBUG=False
     heroku config:set SECRET_KEY="chave secreta de verdade"
     ```
+
+
 
 * Testando do deploy no heroku:
 
