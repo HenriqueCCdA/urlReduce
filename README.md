@@ -1,13 +1,30 @@
-# 🐍 urlRedure 🐍
+# 🐍 urlReduce 🐍
 
 [![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/)
 [![codecov](https://codecov.io/gh/HenriqueCCdA/urlReduce/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlReduce)
 
-Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
-
-Deploy da aplicação no **Heroku**: 
+Nesse repositorio temos o projeto desenvolvido no BootCamp Dev Pro da [PythonPro](www.python.pro.br). O objetivo desse projeto é desenvolver um redutor de url. O link para o deploy da aplicação no **Heroku** pode ser encontrada no link abaixo:
 
 🔥🔥🔥[https://urlreduce.herokuapp.com/](https://urlreduce.herokuapp.com/)🔥🔥🔥
+
+
+
+## Principais tecnologias utilizadas:
+
+Necessidade                   | Tecnologias
+---------                     | ------
+Framework backend             | Django
+CI                            | Github Actions
+CD                            | Heroku
+Banco de dados                | PostgresSQL
+Gestão de dependecias         | Pipenv
+Testes                        | Pytest 
+Relatorio de Erros            | Sentry
+Servidor de arquivo estaticos | Whitenose
+WSGI                          | Gunicorn 
+
+
+
 
 ---
 
@@ -220,7 +237,7 @@ Deploy da aplicação no **Heroku**:
 
 
 
-### 3) Iniciando o o projeto 🛠
+### 3) Iniciando o projeto 🛠
 
 * Criando o app encutador:
 
