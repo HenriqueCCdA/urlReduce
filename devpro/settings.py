@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from functools import partial
+
+from dj_database_url import parse as dburl
 from decouple import Csv, config
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -78,14 +81,12 @@ WSGI_APPLICATION = 'devpro.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+default_db_url = 'sqlite:///' + str(BASE_DIR / 'db.sqlite3')
+dburl = partial(dburl, conn_max_age=600)
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': config('DATABASE_URL', default=default_db_url, cast=dburl)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
