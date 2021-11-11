@@ -136,30 +136,51 @@ Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
      - Pipfile.lock
     ```
 
-### 2) Iniciando o o projeto 🛠
+### 2) Deploy no heroku
+
+* Instalar o arquivo gunicorn:
+
+    ```console
+    pipenv install gunicorn
+    ```
+
+* Criando o aquivo Procfile:
+
+    ```yaml
+    web: gunicorn devpro.wsgi --log-file -
+    ```
+
+* Crianda apps pelo heroku-cli:
+
+    ```console
+    heroku apps:create urlreduce
+    ```
+
+
+### 3) Iniciando o o projeto 🛠
 
 * Criando o app encutador:
 
     ```console
     cd devpro
-    python ../manage.py startapp encurtador    
+    python ../manage.py startapp encurtador
     ```
 
  * Criando o usuario costumizado:
-       
+
     > O usuário costumizado irá ficar no aquivos models.py do app encutador. O código base foi retirado da classe AbstracticUser encontrado no módulo django.contib.auth.models.py.
 
     > Criar UserManager usando novamente a Classe UserManager do módulo django.contib.auth.models.py.
 
 
-    Criar a varialvel no settings.py 
-   
+    Criar a varialvel no settings.py
+
     ```python
-    AUTH_USER_MODEL='devpro.encutador'   
+    AUTH_USER_MODEL='devpro.encutador'
     ```
 
-    Para testa posse usar o makemigrations 
-    
+    Para testa posse usar o makemigrations
+
     ```console
     python manage.py makemigrations
     ```
