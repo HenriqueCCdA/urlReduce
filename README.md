@@ -137,6 +137,13 @@ Deploy da aplicação no **Heroku**:
     STATIC_ROOT = BASE_DIR / 'staticfiles/'
     ```
 
+* Servindo os arquivos estaticos com  o **whitenose**:
+  
+    ```console
+    pipenv install whitenose
+    ```
+
+
 * Instalando o sentry:
 
     ```console
