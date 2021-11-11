@@ -1,7 +1,7 @@
 # 🐍 urlRedure 🐍
 
-[![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlRedure/)
-[![codecov](https://codecov.io/gh/HenriqueCCdA/urlRedure/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlRedure)
+[![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/)
+[![codecov](https://codecov.io/gh/HenriqueCCdA/urlReduce/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlReduce)
 
 Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
