@@ -5,7 +5,7 @@
 
 Projeto desenvolvido no BootCamp Dev Pro do python pro www.python.pro.br.
 
-Deploy da aplica no **Heroku**: 
+Deploy da aplicação no **Heroku**: 
 
 🔥🔥🔥[https://urlreduce.herokuapp.com/](https://urlreduce.herokuapp.com/)🔥🔥🔥
 
@@ -38,6 +38,8 @@ Deploy da aplica no **Heroku**:
     pipenv install -d flake8
     ```
 
+* Instalar o **dj-database-url**
+
 * Configurando o flake8 através do arquivo .flake8
 
     ```yml
@@ -63,6 +65,12 @@ Deploy da aplica no **Heroku**:
     python manage.py runserver
     ```
 
+* Instalando o driver para postgres:
+
+    ```console
+    pipenv install psycopg2-binary
+    ```
+
 * Instalando a lib python-decouple, criando o arquivo local .env e arquivo versionado contrib/env-sample
 
    ```yml
@@ -70,6 +78,7 @@ Deploy da aplica no **Heroku**:
    SECRET_KEY=Defina sua chave secreta aqui
    ALLOWED_HOSTS=
    SENTRY_DSN=
+   DATABASE_URL=postgres://postgres:postgres@localhost/testedb
    ```
 
 * Criar a aplicação **base**
@@ -167,8 +176,11 @@ Deploy da aplica no **Heroku**:
 * Criando o aquivo Procfile:
 
     ```yaml
+    release: python manage.py migrate --noinput
     web: gunicorn devpro.wsgi --log-file -
     ```
+
+* Configurando o postgres
 
 * Crianda apps pelo heroku-cli:
 
@@ -189,7 +201,6 @@ Deploy da aplica no **Heroku**:
     heroku config:set DEBUG=False
     heroku config:set SECRET_KEY="chave secreta de verdade"
     ```
-
 
 
 * Testando do deploy no heroku:

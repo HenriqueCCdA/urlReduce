@@ -1,5 +1,6 @@
 name: Python application
 
+# Ativando CI no pull_request e push para branche princical:
 on:
   pull_request:
   push:
@@ -13,9 +14,20 @@ jobs:
       PIPENV_IGNORE_VIRTUALENVS: 1
     runs-on: ubuntu-latest
 
+    # Configurando o postgres:
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testedb
+        ports: [ '5432:5432' ]
+
+    # Passos para build:
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
@@ -25,10 +37,10 @@ jobs:
       run: |
         pip install pipenv
         pipenv sync --dev
-    
+
     - name: Copying configurations
       run: |
-        cp contrib/env-sample .env    
+        cp contrib/env-sample .env
 
     - name: Lint with flake8
       run: |
