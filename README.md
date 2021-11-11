@@ -69,6 +69,7 @@ Deploy da aplica no **Heroku**:
    DEBUG=FALSE
    SECRET_KEY=Defina sua chave secreta aqui
    ALLOWED_HOSTS=
+   SENTRY_DSN=
    ```
 
 * Criar a aplicação **base**
@@ -125,6 +126,18 @@ Deploy da aplica no **Heroku**:
 
     ```python
     STATIC_ROOT = BASE_DIR / 'staticfiles/'
+    ```
+
+* Instalando o sentry:
+
+    ```console
+    pipenv install sentry-sdk
+    ```
+
+    Configurando o **SENTRY_DSN** no heroku:
+
+    ```console
+    heroku config:set SENTRY_DSN="https://asdasdasdsad"
     ```
 
 

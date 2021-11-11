@@ -9,6 +9,7 @@ python-decouple = "*"
 ipython = "*"
 django-extensions = "*"
 gunicorn = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 flake8 = "*"
