@@ -1,5 +1,7 @@
 # 🐍 urlReduce 🐍
 
+![](https://img.shields.io/github/last-commit/HenriqueCCdA/urlReduce?style=plasti&ccolor=blue)
+![](https://img.shields.io/badge/Autor-Henrique%20C%20C%20de%20Andrade-blue)
 [![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/)
 [![codecov](https://codecov.io/gh/HenriqueCCdA/urlReduce/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlReduce)
 
