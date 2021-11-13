@@ -1,0 +1,91 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+  {% include "encurtador/header.html" %}
+  <body class="text-center">
+
+    <div class="container">
+      {% include "encurtador/titulo.html" %}
+
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10 text-left text-muted">
+          <p> CRIADO EM {% now "d \d\e F \d\e Y, f\H" %}  | <a href="#" class="color-y">MOA</a></p>
+          <h5>Original: <a href="{{ reduce.destino }}" class="color-y">{{ reduce.destino }}</a></h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10 text-left text-muted">
+          <h3>Reduzido: <a href="{{url_reduzida}}" class="color-y">{{ url_reduzida}}</a></h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10 text-left">
+          <button class="btn btn-outline-primary">COPY</button>
+          <button class="btn btn-outline-primary">SHARE</button>
+        </div>
+      </div>
+
+      <h2 class="font-weight-bold mt-5">Total de Cliques: <span class="color-y">{{ total_cliques }}</span></h2>
+      <p class="text-muted">Gráfico de Cliques por Dia</p>
+      <div class="row mt-3">
+        <div class="offset-sm-1 col-sm-10">
+
+          <!-- Gráfico -->
+          <div class="card">
+              <canvas id="multipleBarChart"></canvas>
+          </div>
+          <!-- Gráfico -->
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10 mt-5">
+
+            <!-- Tabela -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title font-weight-bold mb-3">Cliques por Dia</h3>
+                </div>
+                <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Data</th>
+                                        <th>Total de Clique</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for r in redirecionamentos_por_data %}
+                                    <tr title="QTD de cliques {{ r.data }}">
+                                        <td class="text-left">{{ r.data }}</td>
+                                        <td>{{ r.cliques }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <!-- Tabela -->
+        </div>
+      </div>
+      {% include "encurtador/ano_jornada.html" %}
+      <br />
+    </div>
+
+    <!-- Bootstrap core JS -->
+    {% include "encurtador/bootstrap_core_js.html" %}
+    <!-- Bootstrap core JS -->
+
+    <!-- Lib Chart JS -->
+    <script src='{% static "encurtador/assets/js/chart.js/chart.min.js" %}'></script>
+    <!-- Lib Chart JS -->
+
+    {% include "encurtador/grafico.html" %}
+  </body>
+</html>
