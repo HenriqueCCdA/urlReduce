@@ -1,4 +1,3 @@
-from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 from devpro.encurtador.models import UrlLog, UrlRedirect
@@ -7,7 +6,7 @@ from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_dat
 
 
 def home(request):
-    return HttpResponse('Olá, eu sou o encurador')
+    return render(request, 'encutador/home.html')
 
 
 def relatorios(request, slug: str):
