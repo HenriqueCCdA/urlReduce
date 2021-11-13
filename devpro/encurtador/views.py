@@ -6,7 +6,7 @@ from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_dat
 
 
 def home(request):
-    return render(request, 'encutador/home.html')
+    return render(request, 'encurtador/home.html')
 
 
 def relatorios(request, slug: str):
@@ -21,7 +21,7 @@ def relatorios(request, slug: str):
                 'total_cliques': soma_de_cliques(redirecionamentos_por_data)
                 }
 
-    return render(request, 'encutador/relatorio.html', context=contexto)
+    return render(request, 'encurtador/relatorio.html', context=contexto)
 
 
 def redirecionar(request, slug: str):
