@@ -11,7 +11,7 @@ def home(request):
 
 def relatorios(request, slug: str):
     reduce = UrlRedirect.objects.get(slug=slug)
-    url_reduzida = request.build_absolute_uri(f'/reduzido/{reduce.slug}')
+    url_reduzida = request.build_absolute_uri(f'/{reduce.slug}')
 
     redirecionamentos_por_data = separa_e_conta_os_redirecionamentos_por_data(slug)
 
