@@ -23,8 +23,7 @@
 
       <div class="row">
         <div class="offset-sm-1 col-sm-10 text-left">
-          <button class="btn btn-outline-primary">COPY</button>
-          <button class="btn btn-outline-primary">SHARE</button>
+          <button onClick="copy('{{url_reduzida}}')" class="btn btn-outline-primary">COPY</button>
         </div>
       </div>
 
@@ -87,5 +86,9 @@
     <!-- Lib Chart JS -->
 
     {% include "encurtador/grafico.html" %}
+
+    <script>
+      function copy(url) { navigator.clipboard.writeText(url); }
+    </script>
   </body>
 </html>
