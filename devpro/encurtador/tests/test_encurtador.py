@@ -107,7 +107,7 @@ def testa_redirecionamento_com_slug_existente(client: Client, url_encurtada):
     Testa se aplicao foi redireciona para o site desejado
     ---------------------------------------------------------------------------------------
     '''
-    response = client.get('/reduzido/' + url_encurtada.slug)
+    response = client.get('/' + url_encurtada.slug)
     assert response.status_code == HTTPStatus.FOUND  # 302
     assert response.headers['Location'] == url_encurtada.destino
 
@@ -119,7 +119,7 @@ def testa_redirecionamento_com_slug_nao_existente(client: Client, db):
     são existe o slug
     ---------------------------------------------------------------------------------------
     '''
-    response = client.get('/reduzido/banana')
+    response = client.get('/banana')
     assert response.status_code == HTTPStatus.FOUND  # 302
     assert response.headers['Location'] == '/'
 
@@ -130,7 +130,7 @@ def testa_codigo_de_estato_da_pagina_de_relatorio(client: Client, url_encurtada)
     Testa o estado da pagina de relatorio
     ---------------------------------------------------------------------------------------
     '''
-    response = client.get(f'/relatorios/{url_encurtada.slug}')
+    response = client.get(f'/relatorio/{url_encurtada.slug}')
     assert response.status_code == HTTPStatus.OK  # 200
 
 
@@ -140,7 +140,7 @@ def testa_se_foi_carregado_o_template_correto(client: Client, url_encurtada):
     Testa se o template correto foi carregado
     ---------------------------------------------------------------------------------------
     '''
-    response = client.get(f'/relatorios/{url_encurtada.slug}')
+    response = client.get(f'/relatorio/{url_encurtada.slug}')
     assert_contains(response, '<h5>Original: <a href=')
     assert_contains(response, '<h3>Reduzido: <a href=')
 
@@ -151,5 +151,5 @@ def testa_se_url_do_destino(client: Client, url_encurtada):
     Testa se url do destino apareceu corretament
     ---------------------------------------------------------------------------------------
     '''
-    response = client.get(f'/relatorios/{url_encurtada.slug}')
+    response = client.get(f'/relatorio/{url_encurtada.slug}')
     assert_contains(response, f'<a href="{url_encurtada.destino}"')
