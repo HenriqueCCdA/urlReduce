@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 
 class UserManager(BaseUserManager):
@@ -111,6 +112,9 @@ class UrlRedirect(models.Model):
 
     def __str__(self):
         return f'{self.slug} -> {self.destino}'
+
+    def get_absolute_url(self):
+        return reverse('relatorio_name', kwargs={'slug': self.slug})
 
 
 class UrlLog(models.Model):

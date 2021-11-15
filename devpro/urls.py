@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home_html'),
     path('<slug:slug>', views.redirecionar, name='redirecionar_name'),
-    path('relatorio/<slug:slug>', views.relatorios, name='relatio_name')
+    path('relatorio/<slug:slug>', views.relatorio, name='relatorio_name')
 ]
