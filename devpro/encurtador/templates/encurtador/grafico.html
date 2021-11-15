@@ -1,60 +1,9 @@
-<script>
-let multipleBarChart = document.getElementById('multipleBarChart').getContext('2d')
+{% load static %}
+    <script src='{% static "encurtador/assets/js/grafico.js" %}'></script>
+    <script>
 
-let myMultipleBarChart = new Chart(multipleBarChart, {
-    type: 'bar',
+    let x = JSON.parse('{{ dias_grafico|safe }}');
+    let y = JSON.parse('{{ cliques_grafico|safe }}');
 
-    // Como usar a Lib ChartJS com Django -> https://medium.com/code-rocket-blog/trabalhando-com-gr%C3%A1ficos-no-django-usando-chart-js-495aa6abbe0f 
-
-    data: {
-        labels: [
-            {% for r in redirecionamentos_por_data %}
-                {% if forloop.counter == 1 %}
-                "{{ r.data}}"
-                {% else %}
-                , "{{ r.data }}"
-                {% endif %}
-            {% endfor %}
-            ],
-        datasets: [{
-            label: "Total de Cliques por Dia",
-            backgroundColor: '#005490',
-            borderColor: '#005490',
-            data:[
-            {% for r in redirecionamentos_por_data %}
-                {% if forloop.counter == 1 %}
-                    {{ r.cliques }}
-                {% else %}
-                    , {{ r.cliques }}
-                {% endif %}
-            {% endfor %}
-            ],
-        }],
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            position: 'bottom'
-        },
-        title: {
-            display: true,
-            //text: 'Gráfico de Cliques por Dia'
-        },
-        tooltips: {
-            mode: 'index',
-            intersect: false
-        },
-        responsive: true,
-        scales: {
-            xAxes: [{
-                stacked: true,
-            }],
-            yAxes: [{
-                stacked: true
-            }]
-        }
-    }
-});
-</script>}
-  
+    plota(x, y)
+    </script>

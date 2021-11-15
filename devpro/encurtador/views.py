@@ -1,3 +1,6 @@
+from json import dumps
+
+
 from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 from devpro.encurtador.models import UrlLog, UrlRedirect
@@ -17,10 +20,20 @@ def relatorio(request, slug: str):
 
     redirecionamentos_por_data = separa_e_conta_os_redirecionamentos_por_data(slug)
 
+    datas, cliques = [], []
+    for r in redirecionamentos_por_data:
+        datas.append(str(r.data))
+        cliques.append(r.cliques)
+
+    print(datas)
+    print(cliques)
+
     contexto = {'reduce':  reduce,
                 'url_reduzida': url_reduzida,
                 'redirecionamentos_por_data': redirecionamentos_por_data,
-                'total_cliques': soma_de_cliques(redirecionamentos_por_data)
+                'total_cliques': soma_de_cliques(redirecionamentos_por_data),
+                'dias_grafico': dumps(datas),
+                'cliques_grafico': dumps(cliques)
                 }
 
     return render(request, 'encurtador/relatorio.html', context=contexto)
