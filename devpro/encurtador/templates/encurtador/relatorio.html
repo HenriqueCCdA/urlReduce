@@ -2,11 +2,11 @@
 
 <!doctype html>
 <html lang="pt-br">
-  {% include "encurtador/header.html" %}
+{% include "encurtador/header.html" %}
   <body class="text-center">
 
     <div class="container">
-      {% include "encurtador/titulo.html" %}
+{% include "encurtador/titulo.html" %}
 
       <div class="row">
         <div class="offset-sm-1 col-sm-10 text-left text-muted">
@@ -78,14 +78,14 @@
     </div>
 
     <!-- Bootstrap core JS -->
-    {% include "encurtador/bootstrap_core_js.html" %}
+{% include "encurtador/bootstrap_core_js.html" %}
     <!-- Bootstrap core JS -->
 
     <!-- Lib Chart JS -->
     <script src='{% static "encurtador/assets/js/chart.js/chart.min.js" %}'></script>
     <!-- Lib Chart JS -->
 
-    {% include "encurtador/grafico.html" %}
+{% include "encurtador/grafico.html" %}
 
     <script>
       function copy(url) { navigator.clipboard.writeText(url); }
