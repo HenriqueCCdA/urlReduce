@@ -7,7 +7,7 @@ from devpro.django_assertions import assert_contains
 from devpro.encurtador.models import UrlRedirect, UrlLog
 
 from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data,\
-                                 soma_de_cliques_pela_slug, soma_de_cliques
+                                 soma_de_cliques_pela_slug, soma_de_cliques, obtem_todas_as_urls
 
 
 @pytest.fixture
@@ -25,6 +25,14 @@ def logs(lista_urls):
     log_url1 = baker.make(UrlLog, 3, url_redirect=lista_urls[0])
     log_url2 = baker.make(UrlLog, 8, url_redirect=lista_urls[1])
     return log_url1, log_url2
+
+
+def testa_a_listagem_de_todas_as_url_cadastrada(lista_urls):
+
+    listas = obtem_todas_as_urls()
+
+    # numero toral de logs da url1 acessado utilizando a chave estrangeira
+    assert len(listas) == len(UrlRedirect.objects.all())
 
 
 def testa_a_relacao_entre_o_modelo_url_redirect_e_url_log(logs, lista_urls):
@@ -81,7 +89,7 @@ def testa_a_facada_que_calcula_o_numero_total_de_cliques(logs, lista_urls):
         assert soma_de_cliques(redirecionamentos_por_data) == len(log)
 
 
-def testa_codigo_de_estato_da_home(client: Client):
+def testa_codigo_de_estato_da_home(client: Client, db):
     '''
     ---------------------------------------------------------------------------------------
     Testa se o caminho para o home foi encontrado
@@ -91,7 +99,7 @@ def testa_codigo_de_estato_da_home(client: Client):
     assert response.status_code == HTTPStatus.OK
 
 
-def testa_codigo_de_estato_o_conteudo_da_home(client: Client):
+def testa_o_conteudo_da_home(client: Client, db):
     '''
     ---------------------------------------------------------------------------------------
     Testa se o caminho para o home foi encontrado

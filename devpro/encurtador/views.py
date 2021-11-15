@@ -2,14 +2,16 @@ from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 from devpro.encurtador.models import UrlLog, UrlRedirect
 
-from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data, soma_de_cliques
+from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data, soma_de_cliques,\
+                                     obtem_todas_as_urls
 
 
 def home(request):
-    return render(request, 'encurtador/home.html')
+    print(obtem_todas_as_urls())
+    return render(request, 'encurtador/home.html', context={'lista_urls': obtem_todas_as_urls()})
 
 
-def relatorios(request, slug: str):
+def relatorio(request, slug: str):
     reduce = UrlRedirect.objects.get(slug=slug)
     url_reduzida = request.build_absolute_uri(f'/{reduce.slug}')
 

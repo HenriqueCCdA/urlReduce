@@ -4,6 +4,17 @@ from django.db.models import Count
 from devpro.encurtador.models import UrlRedirect
 
 
+def obtem_todas_as_urls() -> List[UrlRedirect]:
+    '''
+    ---------------------------------------------------------------------------------
+    Fachada que retorna uma lista com todas as urls cadastradas
+    ---------------------------------------------------------------------------------
+    return: Uma lista com as urls
+    ---------------------------------------------------------------------------------
+    '''
+    return list(UrlRedirect.objects.all())
+
+
 def separa_e_conta_os_redirecionamentos_por_data(slug: str) -> List[UrlRedirect]:
     '''
     ---------------------------------------------------------------------------------
