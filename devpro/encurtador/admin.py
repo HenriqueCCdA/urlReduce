@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from devpro.encurtador.models import UrlRedirect, UrlLog
+from devpro.encurtador.models.url import UrlRedirect, UrlLog
 
 
 @admin.register(UrlRedirect)

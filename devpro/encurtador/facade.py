@@ -1,7 +1,7 @@
 from typing import List
 from django.db.models.functions import TruncDate
 from django.db.models import Count
-from devpro.encurtador.models import UrlRedirect
+from devpro.encurtador.models.url import UrlRedirect
 
 
 def obtem_todas_as_urls() -> List[UrlRedirect]:
