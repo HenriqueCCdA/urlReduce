@@ -1,7 +1,7 @@
 from json import dumps
 
 
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, reverse
 from django.core.exceptions import ObjectDoesNotExist
 from devpro.encurtador.models import UrlLog, UrlRedirect
 
@@ -45,7 +45,7 @@ def redirecionar(request, slug: str):
         url = UrlRedirect.objects.get(slug=slug)
     # se nao achar o slug redireciona para a home
     except ObjectDoesNotExist:
-        return redirect('/')
+        return redirect(reverse('home'))
     else:
         path = url.destino
 
