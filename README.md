@@ -4,6 +4,7 @@
 ![](https://img.shields.io/badge/Autor-Henrique%20C%20C%20de%20Andrade-blue)
 [![Updates](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/shield.svg)](https://pyup.io/repos/github/HenriqueCCdA/urlReduce/)
 [![codecov](https://codecov.io/gh/HenriqueCCdA/urlReduce/branch/main/graph/badge.svg?token=8U5Z5LSRJ0)](https://codecov.io/gh/HenriqueCCdA/urlReduce)
+[![Python application](https://github.com/HenriqueCCdA/urlReduce/actions/workflows/ga_ci.yml/badge.svg)](https://github.com/HenriqueCCdA/urlReduce/actions/workflows/ga_ci.yml)
 
 Nesse repositorio temos o projeto desenvolvido no BootCamp Dev Pro da [PythonPro](www.python.pro.br). O objetivo desse projeto é desenvolver um redutor de url. O link para o deploy da aplicação no **Heroku** pode ser encontrada no link abaixo:
 
