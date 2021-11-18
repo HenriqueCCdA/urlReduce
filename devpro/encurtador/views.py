@@ -1,17 +1,20 @@
 from json import dumps
 
-
+from django.core.paginator import Paginator
 from django.shortcuts import redirect, render, reverse
 from django.core.exceptions import ObjectDoesNotExist
-from devpro.encurtador.models import UrlLog, UrlRedirect
 
+from devpro.encurtador.models import UrlLog, UrlRedirect
 from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_data, soma_de_cliques,\
                                      obtem_todas_as_urls
 
 
 def home(request):
-    print(obtem_todas_as_urls())
-    return render(request, 'encurtador/home.html', context={'lista_urls': obtem_todas_as_urls()})
+    urls = obtem_todas_as_urls()
+    paginator = Paginator(urls, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'encurtador/home.html', context={'page_obj': page_obj})
 
 
 def relatorio(request, slug: str):
