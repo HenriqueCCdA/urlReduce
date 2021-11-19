@@ -28,9 +28,9 @@
                                   <tbody>
                                   {% for url in page_obj %}
                                       <tr>
-                                          <td class="text-left">{{ url.slug }}</td>
+                                          <td class="text-left"><a href={{url.obtem_url_absoluta_para_url_reduzida}}>{{ url.slug }}</td>
                                           <td>{{ url.destino }}</td>
-                                          <td><a href={{url.get_absolute_url}}>relatório</td>
+                                          <td><a href={{url.obtem_url_absoluta_para_o_relatorio}}>relatório</td>
                                       </tr>
                                   {% endfor%}
                                   </tbody>
