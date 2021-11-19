@@ -20,8 +20,12 @@ class UrlRedirect(models.Model):
     def __str__(self):
         return f'{self.slug} -> {self.destino}'
 
-    def get_absolute_url(self):
-        return reverse('relatorio_name', kwargs={'slug': self.slug})
+    # Eu posso fazer isso ???
+    def obtem_url_absoluta_para_url_reduzida(self):
+        return reverse('redirecionar', kwargs={'slug': self.slug})
+
+    def obtem_url_absoluta_para_o_relatorio(self):
+        return reverse('relatorio', kwargs={'slug': self.slug})
 
 
 class UrlLog(models.Model):
