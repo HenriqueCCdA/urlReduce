@@ -275,7 +275,7 @@ WSGI                          | Gunicorn
     ```
 
 * Criando modelo para armazenar as Urls.
-    
+
     > Adicionar CRUD do admin do django.
 
 * Criando a página dos relatórios. 
@@ -284,5 +284,7 @@ WSGI                          | Gunicorn
 
 * Mostrando o relatorio
 
+### 4) Modelo de Dados Final 🛠
 
+![Modelo](./models.svg)
 
