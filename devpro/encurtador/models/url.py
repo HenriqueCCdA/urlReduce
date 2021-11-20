@@ -34,7 +34,7 @@ class UrlLog(models.Model):
     user_agent = models.CharField(max_length=512, null=True, blank=True)
     host = models.CharField(max_length=512, null=True, blank=True)
     ip = models.GenericIPAddressField(null=True, blank=True)
-    url_redirect = models.ForeignKey(UrlRedirect, models.DO_NOTHING, related_name='logs')
+    url_redirect = models.ForeignKey(UrlRedirect, models.CASCADE, related_name='logs')
 
     def __str__(self):
         return 'log'
