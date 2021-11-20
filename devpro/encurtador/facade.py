@@ -12,7 +12,7 @@ def obtem_todas_as_urls() -> List[UrlRedirect]:
     return: Uma lista com as urls
     ---------------------------------------------------------------------------------
     '''
-    return list(UrlRedirect.objects.all())
+    return list(UrlRedirect.objects.all().order_by('slug'))
 
 
 def separa_e_conta_os_redirecionamentos_por_data(slug: str) -> List[UrlRedirect]:
