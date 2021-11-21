@@ -29,6 +29,17 @@ class UrlRedirect(models.Model):
 
 
 class UrlLog(models.Model):
+    """
+    Classe que armazena as logs de uma url.
+
+    Campos
+    criado_em : momento que a url foi criada
+    atualizado_em : momento que a url foi modifica
+    user_agent: navegador que gerou a requesição
+    host:
+    ip:
+    url_redirect : id da url (chave estrangeira)
+    """
     criado_em = models.DateTimeField(auto_now_add=True)
     origem = models.URLField(max_length=1024, null=True, blank=True)
     user_agent = models.CharField(max_length=512, null=True, blank=True)
@@ -37,4 +48,4 @@ class UrlLog(models.Model):
     url_redirect = models.ForeignKey(UrlRedirect, models.CASCADE, related_name='logs')
 
     def __str__(self):
-        return 'log'
+        return f'log for {self.url_redirect}'

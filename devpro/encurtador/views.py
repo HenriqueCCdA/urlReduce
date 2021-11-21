@@ -28,9 +28,6 @@ def relatorio(request, slug: str):
         datas.append(str(r.data))
         cliques.append(r.cliques)
 
-    print(datas)
-    print(cliques)
-
     contexto = {'reduce':  reduce,
                 'url_reduzida': url_reduzida,
                 'redirecionamentos_por_data': redirecionamentos_por_data,
