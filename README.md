@@ -16,7 +16,8 @@ Nesse repositorio temos o projeto desenvolvido no BootCamp Dev Pro da [PythonPro
 
 Necessidade                   | Tecnologias
 ---------                     | ------
-Framework backend             | Django
+Framework backEnd             | Django
+Framework FrontEnd            | Chart.js, bootstrap
 CI                            | Github Actions
 CD                            | Heroku
 Banco de dados                | PostgresSQL
