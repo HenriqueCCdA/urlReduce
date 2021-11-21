@@ -97,6 +97,7 @@ WSGI                          | Gunicorn
    DEBUG=FALSE
    SECRET_KEY=Defina sua chave secreta aqui
    ALLOWED_HOSTS=
+   INTERNAL_IPS=
    SENTRY_DSN=
    DATABASE_URL=postgres://postgres:postgres@localhost/testedb
    ```
@@ -149,6 +150,30 @@ WSGI                          | Gunicorn
     ... 
     'django_extensions'    
     ]
+    ```
+
+* Instalando django debug toolbar
+
+    ```console
+    pipenv install -d django-debug-toolbar
+    ```
+
+    Adicionar o codigo abaixo no arquivo settings.py
+
+    ```python
+    INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default=None)
+
+    if DEBUG:
+        INSTALLED_APPS.append('debug_toolbar')
+        MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    ```
+
+    Adicionar o codigo abaixo no arquivo url.py do projeto
+
+    ```python
+    if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns.append(path('__debug__/', include(debug_toolbar.urls)))
     ```
 
 * Configurando a coleta dos arquivos estáticos:

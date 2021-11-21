@@ -21,6 +21,7 @@ pytest = "*"
 pytest-cov = "*"
 codecov = "*"
 model-bakery = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.9"

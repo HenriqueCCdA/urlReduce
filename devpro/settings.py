@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions'
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +80,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'devpro.wsgi.application'
+
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default=None)
+
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 
 # Database
@@ -137,9 +143,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 # configuracao do sentry
-
 
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 
