@@ -11,7 +11,7 @@ from devpro.encurtador.facade import separa_e_conta_os_redirecionamentos_por_dat
 
 def home(request):
     urls = obtem_todas_as_urls()
-    paginator = Paginator(urls, 3)
+    paginator = Paginator(urls, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'encurtador/home.html', context={'page_obj': page_obj})

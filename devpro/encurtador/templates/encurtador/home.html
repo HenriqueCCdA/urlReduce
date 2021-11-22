@@ -49,10 +49,8 @@
                                     {% for _ in page_obj.paginator %}
                                         {% if forloop.counter == page_obj.number %}
                                             [{{ forloop.counter }}]
-                                        {% elif forloop.counter < page_obj.number %}
-                                            <a href="?page={{ page_obj.previous_page_number }}">[{{ forloop.counter }}]</a>
                                         {% else %}
-                                            <a href="?page={{ page_obj.next_page_number }}">[{{ forloop.counter }}]</a>
+                                            <a href="?page={{ forloop.counter }}">[{{ forloop.counter }}]</a>
                                         {% endif %}
                                     {% endfor %}
                                     </span>
