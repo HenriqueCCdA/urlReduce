@@ -2,8 +2,8 @@
     <script src='{% static "encurtador/assets/js/grafico.js" %}'></script>
     <script>
 
-    let x = JSON.parse('{{ dias_grafico|safe }}');
-    let y = JSON.parse('{{ cliques_grafico|safe }}');
+    const x = JSON.parse('{{ dias_grafico|safe }}');
+    const y = JSON.parse('{{ cliques_grafico|safe }}');
 
     plota(x, y)
     </script>
