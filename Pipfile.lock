@@ -208,11 +208,10 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:b4c634615a0cf5b02cf83c7bedffc8da0ca439f00e79452699454da6fbd4153d",
-                "sha256:feb5ff19b354cde9efd2344ef6d5e79880ce4be643037641b49508bbb850d060"
+                "sha256:716f9d20b4c3513d1720245eb1dac009b40c9694c88e940e54b67b8b65d09493",
+                "sha256:d181db00651bce5268b8f559795053d5e8f645e4dbafac6d262b22d7e72e19eb"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==59.4.0"
+            "version": "==60.9.0"
         },
         "sqlparse": {
             "hashes": [
